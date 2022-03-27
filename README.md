@@ -1,3 +1,1 @@
-# fin-fam-backend
-
-![](/Users/naveen/Desktop/Fin Fam.png)
+# fin-fam-backend![](data/schema.png)

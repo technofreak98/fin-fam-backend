@@ -6,8 +6,10 @@ famfin_db = client["FamFin"]
 def getAll(collection):
     return famfin_db[collection].find()
 
-def get(collection, record_id):
-    return famfin_db[collection].find({"_id": record_id})
+
+def get(collection, record):
+    return famfin_db[collection].find(record)
+
 
 def insert(collection, record):
     try:
@@ -16,8 +18,8 @@ def insert(collection, record):
         return {"result":"Duplicate - Failure"}
     return {"result":"Success"}
 
+
 def update(collection, record_id, upd_doc):
-    print(collection, record_id)
-    famfin_db[collection].find_one_and_update({"_id": record_id}, 
+    famfin_db[collection].find_one_and_update({"_id": record_id},
                                  {"$set": upd_doc})
     return {"result":"Success"}

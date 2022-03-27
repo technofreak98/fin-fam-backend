@@ -12,13 +12,6 @@ devices_bp = Blueprint('investments', __name__, url_prefix='/investments')
 
 DB_NAME = "investments"
 
-# @devices_bp.route('/users', methods = ['GET'])
-# def getUsers():
-#     res = []
-#     for item in db.getAll(DB_NAME):
-#         res.append(json.loads(json_util.dumps(item)))
-#     return {"data":res},200
-
 
 @devices_bp.route('/<user_id>', methods = ['GET'])
 def get_user_investments(user_id):
@@ -40,13 +33,3 @@ def add_investments():
 def update_investments(user_id):
     req_data = request.get_json(force=True)
     return db.update(DB_NAME, ObjectId(user_id), req_data)
-
-
-# Data Models:
-
-# user_record = {
-#       "username":"ramsankar",
-#       "password":"test123",
-#       "email":"ramsankar123@gmail.com",
-#       "mobile":"9874521110"
-#     }

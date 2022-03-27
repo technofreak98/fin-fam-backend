@@ -33,13 +33,3 @@ def addUser():
 def updateUser(user_id):
     req_data = request.get_json(force=True)
     return db.update(USER_DB, ObjectId(user_id), req_data)
-
-
-# Data Models:
-
-# user_record = {
-#       "username":"ramsankar",
-#       "password":"test123",
-#       "email":"ramsankar123@gmail.com",
-#       "mobile":"9874521110"
-#     }

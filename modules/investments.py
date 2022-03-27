@@ -18,7 +18,7 @@ DB_NAME = "investments"
 def get_user_investments(user_id):
     req_data = {"user_id":user_id}
     investment_data = json.loads(json_util.dumps(db.get(DB_NAME, req_data)))[0]
-    worth = list({key: value} for key, value in investment_data.items() if not key in ['_id','user_id'])
+    worth = list({'name':key,'value':value} for key, value in investment_data.items() if not key in ['_id','user_id'])
     res = {'investment_id':investment_data['_id'],'worth':worth}
     return {"data": [res]},200
 

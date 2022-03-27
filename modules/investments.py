@@ -15,8 +15,7 @@ DB_NAME = "investments"
 
 @devices_bp.route('/<user_id>', methods = ['GET'])
 def get_user_investments(user_id):
-    req_data = request.get_json(force=True)
-    req_data.update({"user_id":user_id})
+    req_data = {"user_id":user_id}
     res = []
     for item in db.get(DB_NAME, req_data):
         res.append(json.loads(json_util.dumps(item)))

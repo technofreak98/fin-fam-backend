@@ -14,7 +14,7 @@ def get(collection, record):
 
 def insert(collection, record):
     try:
-        result = famfin_db[collection].insert_one(record)
+        famfin_db[collection].insert_one(record)
     except pymongo.errors.DuplicateKeyError:
         return {"result":"Duplicate - Failure"}
     return {"result":"Success"}

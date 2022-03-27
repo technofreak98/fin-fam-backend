@@ -1,7 +1,8 @@
 import pymongo
+import os
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-famfin_db = client["FamFin"]
+client = pymongo.MongoClient(os.getenv('db_client'))
+famfin_db = client["finfam"]
 
 def getAll(collection):
     return famfin_db[collection].find()

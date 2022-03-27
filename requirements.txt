@@ -1,8 +1,6 @@
 Flask
 Flask-Migrate==2.5.2
 Flask-Script==2.0.6
-Flask-SQLAlchemy==2.5.1
-psycopg2-binary==2.9.2
 python-dotenv==0.19.2
 gunicorn
 flask-cors
